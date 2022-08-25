@@ -15,8 +15,7 @@ import searchView from './views/searchView';
 import ResultsView from './views/ResultsView';
 import paginationView from './views/paginationView';
 import bookmarksView from './views/bookmarksView';
-import AddRecipeView from './views/AddRecipeView';
-import addRecipeView from './views/AddRecipeView';
+import addRecipeView from './views/addRecipeView';
 
 const showRecipe = async () => {
   try {
@@ -92,7 +91,7 @@ const controlAddRecipe = async function (recipe) {
       addRecipeView.toggleShow();
     }, 2500);
   } catch (e) {
-    AddRecipeView.renderError(e.message);
+    addRecipeView.renderError(e.message);
   }
 };
 
@@ -103,7 +102,7 @@ const init = () => {
   recipeView.addHandlerBookmark(controlBookmark);
   searchView.addHandlerSearch(loadSearchResults);
   paginationView.addHandlerClick(paginationControl);
-  AddRecipeView.addHandlerUpload(controlAddRecipe);
+  addRecipeView.addHandlerUpload(controlAddRecipe);
 };
 init();
 ///////////////////////////////////////
